@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
+
+body {
+  background: #efefbb;
+  background: -webkit-linear-gradient(to right, #d4d3dd, #efefbb);
+  background: linear-gradient(to right, #d4d3dd, #efefbb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato";
+  margin: 0;
+}
+
+h1 {
+  letter-spacing: 3px;
+}
+
+#pokemonContainer {
+  background-color: "#fceaff";
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  margin: 0;
+  max-width: 1200px;
+}
+
+.pokemon {
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 8px;
+  padding: 15px;
+  text-align: center;
+  background-size: 100% 100%; /* Pour gérer l'affichage du dégradé des Pokémon à 2 types */
+  background-repeat: no-repeat; /* Pour gérer l'affichage du dégradé des Pokémon à 2 types */
+}
+
+.pokemon:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+.pokemon .imgContainer {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+
+.pokemon .imgContainer img {
+  margin-top: 20px;
+  max-width: 90%;
+}
+
+.pokemon .info {
+  margin-top: 20px;
+}
+
+.pokemon .name {
+  margin: 15px 0 5px;
+  letter-spacing: 1px;
+}
+
+.pokemon .numero {
+  font-weight: lighter;
+}
+
+.starContainer {
+  margin-left: 100px;
+}
+
+#next {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20%;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  margin: 20px;
+}
+
+#next:hover {
+  border: #77b3e6 solid 2px;
+  color: #77b3e6;
+  cursor: pointer;
+}
+
+/* Animation de sautillement quand la souris passe sur un Pokémon */
+@keyframes jump {
+  0%, 100% { transform: translateY(0) }
+  30% { transform: translateY(-8px) }
+  60% { transform: translateY(3px) }
+  80% { transform: translateY(-3px) }
+}
+.pokemon:hover .imgContainer img {
+  animation: jump 0.5s ease; /* ajouter "infinite" si je veux répéter l'animation en boucle */
+}
+
+/* Couleur des cartes à 1 type (18 types) */
+
+/* Je les contrôle finalement entièrement en JS car j'ai besoin de les gérer dynaniquement, mais je laisse les lignes suivantes en commentaire car
+c'est plus pratique de visualiser d'abord les couleurs ici quand j'ai besoin de les modifier */
+
+/*
+.fire {
+  background-color: #f8c5a3;
+}
+.grass {
+  background-color: #baffbf;
+}
+.electric {
+  background-color: #ffec8c;
+}
+.water {
+  background-color: #8ab2e0;
+}
+.ground {
+  background-color: #ac9675;
+}
+.rock {
+  background-color: #9b876d;
+}
+.fairy {
+  background-color: #f3bfef;
+}
+.poison {
+  background-color: #cdb1dd;
+}
+.bug {
+  background-color: #c0d394;
+}
+.dragon {
+  background-color: #9f88f1;
+}
+.psychic {
+  background-color: #cbcc78;
+}
+.flying {
+  background-color: #b5ccff;
+}
+.fighting {
+  background-color: #ffd49b;
+}
+.normal {
+  background-color: #fdecf8;
+}
+.ice {
+  background-color: #cbfdff;
+}
+.ghost {
+  background-color: #978ca3;
+}
+.dark {
+  background-color: #767e78;
+}
+.steel {
+  background-color: #999795;
+}
+*/
