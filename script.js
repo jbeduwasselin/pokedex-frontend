@@ -49,19 +49,19 @@ function createPokemonCard(pokemon) {
   const cardElement = container.firstElementChild; // Création d'une variable qui contient le premier élement enfant du conteneur précédent
 
   // Fonctionnalité pour alterner avec la version shiny du Pokémon en cliquant sur l'icône shiny
-  const starIcon = cardElement.querySelector(".shiny"); // Récupère l'icône shiny de la carte
+  const shinyIcon = cardElement.querySelector(".shiny"); // Récupère l'icône shiny de la carte
   const imgElement = cardElement.querySelector(".imgContainer img"); // Récupère l'image de la carte
-  starIcon.addEventListener("click", function () {
+  shinyIcon.addEventListener("click", function () {
     console.log("Click detected on ", this);
     const isShiny = imgElement.src.includes("/shiny/"); // Vérification de si l’image est en version shiny ou non (grâce au nom de l’URL)
     if (isShiny) {
       // Revenir à la version normale
       imgElement.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`; // Image devient la version non shiny
-      starIcon.style.color = "gray"; // Icône shiny devient grise
+      shinyIcon.style.color = "gray"; // Icône shiny devient grise
     } else {
       // Passer à la version shiny
       imgElement.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`; // Image devient la version shiny
-      starIcon.style.color = "gold"; // Icône shiny devient dorée
+      shinyIcon.style.color = "gold"; // Icône shiny devient dorée
     }
   });
 
@@ -179,6 +179,9 @@ generateTypeStyles();
 
 
 /* -------- IDÉES D'AMÉLIORATIONS (approx. par ordre d'importance) --------
+
+  - l'icône shiny est presque invisible sur les Pokémon dont le monotype ou le type 2 sont de même couleur qu'elle, voir si je peux ajouter une bordure de couleur différente pour
+  garantir son affichage quelque soit la couleur de fond
 
   - donner la possibilité de choisir le nombre de Pokémon à afficher avec le bouton Next (petit champ d'input à côté du bouton permettant de modifier la valeur de pokemonsPerPage)
 

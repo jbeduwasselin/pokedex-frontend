@@ -1,2 +1,29 @@
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# IDEs & éditeurs
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
+*.temp
+
+# Environnements
+.env
+.env.*
+
+# Other
+lien-deploiement.txt

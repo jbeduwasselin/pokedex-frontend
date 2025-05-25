@@ -17,6 +17,11 @@ h1 {
   letter-spacing: 3px;
 }
 
+#subtitle {
+  margin: 0 40px 20px 40px;
+  text-align: center;
+}
+
 #pokemonContainer {
   background-color: "#fceaff";
   display: flex;
